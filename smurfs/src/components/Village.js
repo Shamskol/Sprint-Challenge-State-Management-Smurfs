@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./App.css";
 import { connect } from "react-redux";
+import {getSmurf} from "../actions"
 
 const Village = props => {
+
+const{etSmurf} = (props);
+useEffect(() => {
+
+ getSmurf()
+
+}, [getSmurf])
+
+
   return (
     <div className="villageList">
       {props.smurfs.map(item => {
@@ -24,4 +34,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(Village);
+export default connect(mapStateToProps, { getSmurf} )
+(Village);

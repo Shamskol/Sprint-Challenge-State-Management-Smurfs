@@ -16,7 +16,8 @@ import {
   
   const initialState = {
     message: "",
-    smurfs: []
+    smurfs: [],
+    isFetching: false
   };
   
   export const smurfReducer = (state = initialState, action) => {
@@ -25,14 +26,14 @@ import {
       case GET_SMURF:
         return { ...state, isFetching: true, message:"" };
       case GET_SUCCESS:
-        return { ...state, message: "", smurfs: action.payload };
+        return { ...state, isFetching: false, message: "", smurfs: action.payload };
       case GET_FAIL:
         console.log(action.payload);
         return { ...state, message: action.payload };
       case ADD_SMURF:
         return { ...state, message: action.payload };
       case ADD_SUCCESS:
-        return {...state,  message: "", smurfs: action.payload };
+        return {...state,  isFetching: false, message: "", smurfs: action.payload };
       case ADD_FAIL:
         console.log(action.payload);
         return { ...state, message: action.payload };

@@ -7,7 +7,7 @@ import {Provider} from "react-redux"
 import thunk from 'redux-thunk';
 import "./index.css";
 
-const ReduxThunk = require("redux-thunk").default
+
 const store = createStore(smurfReducer, applyMiddleware(thunk));
 
 
