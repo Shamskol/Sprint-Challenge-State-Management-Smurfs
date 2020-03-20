@@ -18,7 +18,7 @@ useEffect(() => {
       {props.smurfs.map(item => {
         return (
           <div className="smurf" key={item.id}>
-            <p>Name: {`${item.name} Smurf`}</p>
+            <p>Name: {item.name}</p>
             <p>Age: {item.age}</p>
             <p>Height: {item.height}</p>
           </div>
