@@ -30,7 +30,7 @@ const Form = props => {
           />
         </div>
         <div className="formItem">
-          <label htmlFor="email">Age: </label>
+          <label htmlFor="age">Age: </label>
           <input
             onChange={changeHandler}
             name="age"
