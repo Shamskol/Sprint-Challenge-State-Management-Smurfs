@@ -1,17 +1,13 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import {getSmurf} from "../actions"
+import { getSmurf } from "../actions";
 
 const Village = props => {
-
-const{etSmurf} = (props);
-useEffect(() => {
-
- getSmurf()
-
-}, [getSmurf])
-
+  const { getSmurf } = props;
+  useEffect(() => {
+    getSmurf();
+  }, [getSmurf]);
 
   return (
     <div className="villageList">
@@ -34,5 +30,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getSmurf} )
-(Village);
+export default connect(mapStateToProps, { getSmurf })(Village);
